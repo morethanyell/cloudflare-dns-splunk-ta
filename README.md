@@ -73,8 +73,7 @@ Pull requests and issue reports are welcome. Let’s make this better together.
 
 ---
 
-## ✨ Author
+## ✨ Beer donations accepted by
 
-Made by a security-minded, film-shooting, cyber poet.  
-Questions, ideas, or bug reports? Open an issue — let’s talk.
+daniel.l.astillero@gmail.com
 
