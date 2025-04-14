@@ -6,23 +6,7 @@ import json
 import random
 import time
 
-'''
-    IMPORTANT
-    Edit only the validate_input and collect_events functions.
-    Do not edit any other part in this file.
-    This file is generated only once when creating the modular input.
-'''
-'''
-# For advanced users, if you want to create single instance mod input, uncomment this method.
-def use_single_instance_mode():
-    return True
-'''
-
 def validate_input(helper, definition):
-    """Implement your own validation logic to validate the input stanza configurations"""
-    # This example accesses the modular input variable
-    # base_url = definition.parameters.get('base_url', None)
-    # api_bearer_token = definition.parameters.get('api_bearer_token', None)
     pass
 
 def get_all_zones(helper, ew, base_url, token):
@@ -77,7 +61,6 @@ def get_all_zones(helper, ew, base_url, token):
             break
 
         page += 1
-        
 
     return zones
 
@@ -134,14 +117,14 @@ def collect_events(helper, ew):
     
     helper.set_log_level(log_level)
     
-    helper.log_info(f"Cloudflare DNS collection starts here.")
+    helper.log_info(f"Cloudflare DNS collection starts here. Starting with Zones...")
     helper.log_info(f"Logging level is set to: {log_level}")
     
     try:
         
         zones = get_all_zones(helper, ew, BASE_URL, BEARER_TOKEN)
         
-        helper.log_info(f"All Zones indexed. Now querying DNS Records API Endpoint. Multi-page enabled. Record per page is set to: 50. This will take time.")
+        helper.log_info(f"All Zones indexed. Now querying DNS Records API Endpoint. Multi-page enabled. Record per page is set to: 100. This will take time.")
     
         dns_ctr = 0
         
@@ -181,9 +164,4 @@ def collect_events(helper, ew):
         
     except Exception as e:
         helper.log_error(f"Cloudflare DNS collection ended with error: {e}")
-    
-    
-    
-    
-    
     
